@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "dgSpecHash": "c0IMJPubVyipN52jnhbHbo+9LcIrsJWDQwpJw12aQJu3tmkg0NvIWlz4qD6C4ThGBk5xMiiyOJc80soS1QcnBg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\O68645\\source\\repos\\ToteOptimizationNoPODetail\\ToteOptimization\\ToteOptimization.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\O68645\\.nuget\\packages\\chartjs\\20.2.3\\chartjs.20.2.3.nupkg.sha512",
+    "C:\\Users\\O68645\\.nuget\\packages\\cldrjs\\0.4.4\\cldrjs.0.4.4.nupkg.sha512",
+    "C:\\Users\\O68645\\.nuget\\packages\\jquery\\3.5.1\\jquery.3.5.1.nupkg.sha512",
+    "C:\\Users\\O68645\\.nuget\\packages\\jquery-globalize\\1.1.1\\jquery-globalize.1.1.1.nupkg.sha512",
+    "C:\\Users\\O68645\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\O68645\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
+    "C:\\Users\\O68645\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\O68645\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.5.0\\runtime.native.system.data.sqlclient.sni.4.5.0.nupkg.sha512",
+    "C:\\Users\\O68645\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\O68645\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\O68645\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\O68645\\.nuget\\packages\\system.data.sqlclient\\4.6.0\\system.data.sqlclient.4.6.0.nupkg.sha512",
+    "C:\\Users\\O68645\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.0\\system.runtime.compilerservices.unsafe.4.5.0.nupkg.sha512",
+    "C:\\Users\\O68645\\.nuget\\packages\\system.security.accesscontrol\\4.5.0\\system.security.accesscontrol.4.5.0.nupkg.sha512",
+    "C:\\Users\\O68645\\.nuget\\packages\\system.security.principal.windows\\4.5.0\\system.security.principal.windows.4.5.0.nupkg.sha512",
+    "C:\\Users\\O68645\\.nuget\\packages\\system.text.encoding.codepages\\4.5.0\\system.text.encoding.codepages.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
