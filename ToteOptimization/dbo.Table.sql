@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[Tote_Status]
+(
+	[Id] INT NOT NULL PRIMARY KEY,
+	[HEAD] VARCHAR(2),
+	[Tote] INT NOT NULL,
+	[REMAIN] INT
+)

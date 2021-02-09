@@ -1,0 +1,235 @@
+﻿@page
+@model ToteOptimization.Pages.LiveToteBModel
+@{
+    ViewData["Title"] = "Live Tote Data 4B";
+}
+<!DOCTYPE html>
+<meta http-equiv="refresh" charset="utf-8" content="90" />
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tote Monitor</title>
+    <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+    <!-- Desktop - 1 -->
+    <div class="left top text" id="n2_10">
+        Line 4B Totes
+        <span id="curponum" style="font-weight: bold; font-size:2vh;"></span>
+        <span style="font-size:1.5vh;" id="timeNow"></span>
+    </div>
+    <div class="left top component" id="n8_0">
+        <!-- Totes -->
+        <div class="frame" id="n2_1">
+
+            <div class="frame" id="n3_1" style="width:15%">
+                <!-- H1 Contents -->
+                <div class="subsets left top text" id="n2_20">
+                    <span id="n2_20-0">H1<br></span>
+                    <span id="n2_20-5">
+                        <span id="1Details"></span>
+                    </span>
+                </div>
+                <!-- H1 Tote Box -->
+                <div class="chart-container" id="n2_6">
+                    <canvas id="H1Chart"></canvas>
+                </div>
+                <!-- H1 Drops -->
+                <div class="left top text" id="n4_5">
+                    <span id="1Time"></span>
+                    <span id="1Drops" style="font-size: 2.5vh;"></span>
+                </div>
+            </div>
+
+            <div class="frame" id="n3_1" style="width:15%">
+                <!-- H3 Contents -->
+                <div class="subsets left top text" id="n2_20">
+                    <span id="n2_20-0">H3<br></span>
+                    <span id="n2_20-5">
+                        <span id="3Details"></span>
+                    </span>
+                </div>
+                <!-- H3 Tote Box -->
+                <div class="chart-container" id="n2_6">
+                    <canvas id="H3Chart"></canvas>
+                </div>
+                <!-- H3 Drops -->
+                <div class="left top text" id="n4_5">
+                    <span id="3Time"></span>
+                    <span id="3Drops" style="font-size: 2.5vh;"></span>
+                </div>
+            </div>
+			
+			<div class="frame" id="n3_1" style="width:15%">
+                <!-- H2 Contents -->
+                <div class="subsets left top text" id="n2_20">
+                    <span id="n2_20-0">H4<br></span>
+                    <span id="n2_20-5">
+                        <span id="2Details"></span>
+                    </span>
+                </div>
+                <!-- H2 Tote Box -->
+                <div class="chart-container" id="n2_6">
+                    <canvas id="H2Chart"></canvas>
+                </div>
+                <!-- H2 Drops -->
+                <div class="left top text" id="n4_5">
+                    <span id="2Time"></span>
+                    <span id="2Drops" style="font-size: 2.5vh;"></span>
+                </div>
+            </div>
+
+            <div class="frame" id="n3_1" style="width:15%">
+                <!-- H5 Contents -->
+                <div class="subsets left top text" id="n2_20">
+                    <span id="n2_20-0">H5<br></span>
+                    <span id="n2_20-5">
+                        <span id="5Details"></span>
+                    </span>
+                </div>
+                <!-- H5 Tote Box -->
+                <div class="chart-container" id="n2_6">
+                    <canvas id="H5Chart"></canvas>
+                </div>
+                <!-- H5 Drops -->
+                <div class="left top text" id="n4_5">
+                    <span id="5Time"></span>
+                    <span id="5Drops" style="font-size: 2.5vh;"></span>
+                </div>
+            </div>
+
+            <div class="frame" id="n3_1" style="width:15%">
+                <!-- H5 Contents -->
+                <div class="subsets left top text" id="n2_20">
+                    <span id="n2_20-0">H6<br></span>
+                    <span id="n2_20-5">
+                        <span id="6Details"></span>
+                    </span>
+                </div>
+                <!-- H5 Tote Box -->
+                <div class="chart-container" id="n2_6">
+                    <canvas id="H6Chart"></canvas>
+                </div>
+                <!-- H5 Drops -->
+                <div class="left top text" id="n4_5">
+                    <span id="6Time"></span>
+                    <span id="6Drops" style="font-size: 2.5vh;"></span>
+                </div>
+            </div>
+
+        </div>
+
+         @*PO*@ 
+        <!--<div class="right frame" id="n2_4">-->
+         @*PO Details*@ 
+        <!--<div class="left top text" id="n2_11">
+            PO Details<br>
+        </div>-->
+         @*Current PO*@ 
+        <!--<div class="left top text" id="n2_11" style="width: 80%; margin-left: auto; margin-right: auto; margin-top: 0%; text-align: left; font-size: 2.5vh;">Current PO</div>
+        <div class="frame" id="n5_2">-->
+         @*Current PO*@ 
+        <!--<div class="left top text" id="n2_13"><span id="curponum" style="font-weight: bold;"></span> </div>-->
+         @*Ingredients*@ 
+        <!--<div class="left top text" id="n2_13_2"><span id="curpodet"></span></div>
+        </div>-->
+            <!-- Next PO -->
+            <!--<div class="left top text" id="n2_11" style="width: 80%;margin-left: auto; margin-right: auto; margin-top: 10%; text-align: left; font-size: 2.5vh;">Next PO</div>-->
+            <!-- Next PO -->
+            <!--<div class="frame" id="n5_1">-->
+            <!-- PO Number -->
+            <!--<div class="left top text" id="n2_13"><span id="nextponum" style="font-weight: bold;"></span></div>-->
+            <!-- Ingredients -->
+            <!--<div class="left top text" id="n2_13"><span id="nextpodet"></span></div>-->
+            <!-- Bags -->
+            <!--<div class="left top text" id="n2_13"><span id="nextpobags"></span></div>
+                </div>-->
+        <!--</div>-->
+    </div>
+</body>
+
+
+
+</html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        var time = document.getElementById('timeNow');
+        time.innerHTML = "Last Refresh: " + new Date();
+        /*------DRAW CHARTS-------*/
+        var parent = document.getElementById('n2_6');
+        var ctx = document.getElementById('H1Chart');
+        ctx.height = parent.height;
+        new Chart(ctx, @Html.Raw(Model.ChartJson1));
+        ctx = document.getElementById('H2Chart');
+        ctx.height = parent.height;
+        new Chart(ctx, @Html.Raw(Model.ChartJson2));
+        ctx = document.getElementById('H3Chart');
+        ctx.height = parent.height;
+        new Chart(ctx, @Html.Raw(Model.ChartJson3));
+        ctx = document.getElementById('H5Chart');
+        ctx.height = parent.height;
+        new Chart(ctx, @Html.Raw(Model.ChartJson5));
+        ctx = document.getElementById('H6Chart');
+        ctx.height = parent.height;
+        new Chart(ctx, @Html.Raw(Model.ChartJson6));
+
+        /*----- POPULATE DETAILS OF CHARTS ----- */
+        var Details = document.getElementById('1Details');
+        var DetailsText = "@Html.Raw(Model.Chart1.data.labels[0])";
+        Details.innerHTML = DetailsText.split("_")[0] + "<br>Material: " + DetailsText.split("_")[1];
+        Details = document.getElementById('2Details');
+        DetailsText = "@Html.Raw(Model.Chart2.data.labels[0])";
+        Details.innerHTML = DetailsText.split("_")[0] + "<br>Material: " + DetailsText.split("_")[1];
+        Details = document.getElementById('3Details');
+        DetailsText = "@Html.Raw(Model.Chart3.data.labels[0])";
+        Details.innerHTML = DetailsText.split("_")[0] + "<br>Material: " + DetailsText.split("_")[1];
+        Details = document.getElementById('5Details');
+        DetailsText = "@Html.Raw(Model.Chart5.data.labels[0])";
+        Details.innerHTML = DetailsText.split("_")[0] + "<br>Material: " + DetailsText.split("_")[1];
+        Details = document.getElementById('6Details');
+        DetailsText = "@Html.Raw(Model.Chart6.data.labels[0])";
+        Details.innerHTML = DetailsText.split("_")[0] + "<br>Material: " + DetailsText.split("_")[1];
+
+        /* --------- POPULATE DROP DETAILS -------- */
+        var Time = document.getElementById('1Time');
+        var Drops = document.getElementById('1Drops');
+        Time.innerHTML = "@Html.Raw(Model.Chart1.secsToEmpty)<br>";
+        Drops.innerHTML = "@Html.Raw(Model.Chart1.data.datasets[0].data[0])" + " kg <br>" + "@Html.Raw(Model.Chart1.totes)" + " Totes Req.";
+
+        Time = document.getElementById('2Time');
+        Drops = document.getElementById('2Drops');
+        Time.innerHTML = "@Html.Raw(Model.Chart2.secsToEmpty)<br>";
+        Drops.innerHTML = "@Html.Raw(Model.Chart2.data.datasets[0].data[0])" + " kg <br>" + "@Html.Raw(Model.Chart2.totes)" + " Totes Req.";
+
+        Time = document.getElementById('3Time');
+        Time.innerHTML = "@Html.Raw(Model.Chart3.secsToEmpty)<br>";
+        Drops = document.getElementById('3Drops');
+        Drops.innerHTML = "@Html.Raw(Model.Chart3.data.datasets[0].data[0])" + " kg <br>" + "@Html.Raw(Model.Chart3.totes)" + " Totes Req.";
+
+        Time = document.getElementById('5Time');
+        Time.innerHTML = "@Html.Raw(Model.Chart5.secsToEmpty)<br>";
+        Drops = document.getElementById('5Drops');
+        Drops.innerHTML = "@Html.Raw(Model.Chart5.data.datasets[0].data[0])" + " kg <br>" + "@Html.Raw(Model.Chart5.totes)" + " Totes Req.";
+
+        Time = document.getElementById('6Time');
+        Time.innerHTML = "@Html.Raw(Model.Chart6.secsToEmpty)<br>";
+        Drops = document.getElementById('6Drops');
+        Drops.innerHTML = "@Html.Raw(Model.Chart6.data.datasets[0].data[0])" + " kg <br>" + "@Html.Raw(Model.Chart6.totes)" + " Totes Req.";
+
+        /* --------- POPULATE CURRENT PO -------- */
+        var curPO = document.getElementById('curponum');
+        curPO.innerHTML = "PO: @Html.Raw(Model.PO)";
+        @*curPO = document.getElementById('curpodet');
+        curPO.innerHTML = "@Html.Raw(Model.PODetails)";*@
+
+        @*/* --------- POPULATE NEXT PO -------- */
+        curPO = document.getElementById('nextponum');
+        curPO.innerHTML = "@Html.Raw(Model.Current_PO[3])";
+        curPO = document.getElementById('nextpodet');
+        curPO.innerHTML = "@Html.Raw(Model.Current_PO[4])";
+        curPO = document.getElementById('nextpobags');
+        curPO.innerHTML = "@Html.Raw(Model.Current_PO[5])" + " Bags";*@
+    });
+</script>
+

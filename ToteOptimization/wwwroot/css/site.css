@@ -1,0 +1,575 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700);
+
+#cssmenu {
+    background: rgba(255, 255, 255, 0.00);
+    width: auto;
+    position: relative;
+    top: 0;
+}
+
+    #cssmenu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+        display: block;
+        zoom: 1;
+    }
+
+        #cssmenu ul:after {
+            content: ' ';
+            display: block;
+            font-size: 0;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        #cssmenu ul li {
+            float: left;
+            display: block;
+            padding: 0;
+        }
+
+            #cssmenu ul li a {
+                color: black;
+                text-decoration: none;
+                display: block;
+                padding: 15px 15px;
+                font-family: 'Open Sans', sans-serif;
+                font-weight: 700;
+                text-transform: uppercase;
+                font-size: 3vh;
+                position: relative;
+                -webkit-transition: color .25s;
+                -moz-transition: color .25s;
+                -ms-transition: color .25s;
+                -o-transition: color .25s;
+                transition: color .25s;
+            }
+
+                #cssmenu ul li a:hover, #cssmenu ul li a:focus {
+                    color: red;
+                    outline: 0;
+                }
+
+                    #cssmenu ul li a:hover:before, #cssmenu ul li a:focus:before {
+                        width: 100%;
+                    }
+
+                #cssmenu ul li a:after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    right: -3px;
+                    top: 19px;
+                    height: 0.5vh;
+                    width: 6px;
+                    background: #ffffff;
+                    opacity: .5;
+                }
+
+                #cssmenu ul li a:before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    height: 0.5vh;
+                    width: 0;
+                    background: red;
+                    -webkit-transition: width .25s;
+                    -moz-transition: width .25s;
+                    -ms-transition: width .25s;
+                    -o-transition: width .25s;
+                    transition: width .25s;
+                }
+
+            #cssmenu ul li.last > a:after, #cssmenu ul li:last-child > a:after {
+                display: none;
+            }
+
+            #cssmenu ul li.active a {
+                color: red;
+            }
+
+                #cssmenu ul li.active a:before {
+                    width: 100%;
+                }
+
+@media screen and (max-width: 768px) {
+    #cssmenu ul li {
+        float: none;
+    }
+
+        #cssmenu ul li a {
+            width: 100%;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+            #cssmenu ul li a:after {
+                display: none;
+            }
+
+            #cssmenu ul li a:before {
+                height: 1px;
+                background: #ffffff;
+                width: 100%;
+                opacity: .2;
+            }
+
+        #cssmenu ul li.last > a:before, #cssmenu ul li:last-child > a:before {
+            display: none;
+        }
+}
+
+
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+    width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: white;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: lightgray;
+    border-radius: 20px;
+    border: 3px solid white;
+}
+
+* {
+    outline: none;
+}
+#scheduleDiv {
+    left: 25%;
+    top: 30%;
+    font-size: 2vh;
+    position:fixed;
+    text-align:left;
+    z-index: 9;
+}
+#progress-wrp {
+    border: 1px solid grey;
+    padding: 1px;
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    border-radius: 10px;
+    margin: 10px;
+    text-align: left;
+    background: #fff;
+    box-shadow: inset 1px 3px 6px rgba(0, 0, 0, 0.12);
+}
+
+    #progress-wrp .progress-bar {
+        height: 100%;
+        border-radius: 10px;
+        background-color: lightgrey;
+        width: 0;
+        box-shadow: inset 1px 1px 10px rgba(0, 0, 0, 0.11);
+    }
+
+    #progress-wrp .status {
+        top: 3px;
+        left: 50%;
+        position: absolute;
+        display: inline-block;
+        color: #000000;
+    }
+
+#poorder {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    #poorder td, #poorder th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #poorder tr:nth-child(odd) {
+        background-color: #f3f3f3;
+    }
+
+    #poorder tr:hover {
+        background-color: #ddd;
+    }
+
+    #poorder th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #1e1f31;
+        color: white;
+    }
+
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+#maincontain {
+    margin-left: 7%;
+    margin-bottom: 10%;
+    position: fixed;
+    width: 85%;
+    height: 85%;
+}
+/* Desktop - 1 */
+#n8_0 {
+    width: 85%;
+    height: 75%;
+    top: 17.5%;
+    background: rgb(245, 245, 245);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px 0px;
+    overflow: hidden;
+    position: fixed;
+}
+
+/* Totes */
+#n2_1 {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px 0px;
+    float: left;
+}
+/* Tote Frame */
+#n3_1 {
+    width: 20%;
+    height: 100%;
+    left: 0%;
+    overflow: hidden;
+    float: left;
+    margin-left: 4%;
+    overflow: hidden;
+    position: relative;
+}
+/* H2 Drops */
+#n4_5 {
+    font-family: Helvetica;
+    font-size: 3vh;
+    font-weight: 400;
+    letter-spacing: 0px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    justify-content: center;
+    margin-top: 5%;
+    width: 100%;
+    transform: translate(0px, 0px);
+    height: 30%;
+    left: 0%;
+}
+/* H2 */
+#n2_6 {
+    background: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px 0px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: bottom;
+    top: 0%;
+    height: 50%;
+}
+
+/* H2 Tote */
+#n6_0 {
+    background: rgba(255, 214, 0, 0.88);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px 0px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: bottom;
+    text-align: center;
+    bottom: 17%;
+    height: 20%;
+    position: absolute;
+}
+
+/* H2 Contents */
+#n2_20 {
+    align-items: normal;
+    color: rgb(255, 0, 0);
+    vertical-align: middle;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    transform: translate(0px, 0px);
+    left: 0%;
+    margin-top: 10%;
+}
+
+/* H2 Contents Subset */
+#n2_20-0 {
+    font-family: Helvetica;
+    font-size: 4vh;
+    font-weight: bold;
+    letter-spacing: 0px;
+}
+
+/* H2 Contents Subset */
+#n2_20-5 {
+    font-family: Helvetica;
+    font-size: 2.5vh;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0px;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    top: 50%
+}
+
+#checkboxes {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 70vh;
+    width: 15%;
+    top: 25%;
+    position: fixed;
+}
+
+#runContain {
+    top: 20%;
+    left: 25%;
+    font-size: 2vh;
+    position:fixed;
+    width:7%;
+    height:5%;
+    text-align:center;
+}
+
+button {
+    display: inline-block;
+    background-color: #1e1f31;
+    border-radius: 10px;
+    border: 4px double slategrey;
+    color: white;
+    text-align: center;
+    font-size: 2vh;
+    padding: 2%;
+    width: 100%;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    outline: none;
+}
+
+button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+button:hover {
+    background-color: lightgray;
+}
+
+button:hover span {
+    padding-right: 25px;
+}
+
+button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+.x-btn:focus, .button:focus, [type="submit"]:focus {
+    outline: none;
+}
+/* PO */
+#n2_4 {
+    width: 40%;
+    height: 100%;
+    overflow: hidden;
+}
+/* Current PO */
+#n5_2 {
+    width: 80%;
+    height: 70%;
+    overflow: hidden;
+    background: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px 0px;
+    top: 3%;
+    left: 10%;
+    transform: translate(0px, 0px);
+    position: relative;
+}
+/* Current PO */
+#n2_13 {
+    font-family: Helvetica;
+    font-size: 2vh;
+    font-weight: 400;
+    letter-spacing: 0px;
+    color: rgb(0, 0, 0);
+    justify-content: flex-start;
+    width: 100%;
+    transform: translate(0px, 0px);
+    margin-left: 5%;
+    overflow-wrap: normal;
+    margin-top: 2%;
+    height: 15%;
+}
+
+#n2_13_2 {
+    font-family: Helvetica;
+    font-size: 2vh;
+    font-weight: 400;
+    letter-spacing: 0px;
+    color: rgb(0, 0, 0);
+    justify-content: flex-start;
+    width: 100%;
+    transform: translate(0px, 0px);
+    margin-left: 5%;
+    overflow-wrap: normal;
+    overflow-x: scroll;
+    margin-top: 2%;
+    height: 70%;
+}
+
+/* Next PO */
+#n5_1 {
+    width: 80%;
+    height: 30%;
+    overflow: hidden;
+    position: relative;
+    background: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px 0px;
+    left: 10%;
+    top: 3%;
+}
+/* Line */
+#n2_11 {
+    font-family: Helvetica;
+    font-size: 4vh;
+    font-weight: 700;
+    letter-spacing: 0px;
+    color: rgb(255, 0, 0);
+    vertical-align: middle;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    transform: translate(0px, 0px);
+    margin-top: 4%;
+    left: 0;
+    top: 15%;
+}
+
+#n2_11_2 {
+    font-family: Helvetica;
+    font-size: 3.5vh;
+    font-weight: 400;
+    letter-spacing: 0px;
+    color: rgb(255, 0, 0);
+    vertical-align: middle;
+    text-align: left;
+    justify-content: left;
+    width: 100%;
+    position:fixed;
+    transform: translate(0px, 0px);
+    line-height: 42.1875px;
+    height: 5%;
+    top: 0%;
+}
+
+
+/* PO Details */
+#n2_10 {
+    font-family: Helvetica;
+    font-size: 5vh;
+    /*font-weight: 700;*/
+    /*letter-spacing: 0px;*/
+    /*color: rgb(255, 0, 0);*/
+    vertical-align: top;
+    text-align: left;
+    justify-content: center;
+    width: 85%;
+    height: 75%;
+    position: fixed;
+    /*transform: translate(0px, 0px);*/
+    /*line-height: 56.25px;*/
+    /*height: 10%;*/
+    top: 10%;
+}
