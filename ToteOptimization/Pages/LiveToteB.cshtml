@@ -22,7 +22,7 @@
         <!-- Totes -->
         <div class="frame" id="n2_1">
 
-            <div class="frame" id="n3_1" style="width:15%">
+            <div class="frame" id="n3_1" style="width:12.5%">
                 <!-- H1 Contents -->
                 <div class="subsets left top text" id="n2_20">
                     <span id="n2_20-0">H1<br></span>
@@ -41,7 +41,26 @@
                 </div>
             </div>
 
-            <div class="frame" id="n3_1" style="width:15%">
+            <div class="frame" id="n3_1" style="width:12.5%">
+                <!-- H2 Contents -->
+                <div class="subsets left top text" id="n2_20">
+                    <span id="n2_20-0">H2<br></span>
+                    <span id="n2_20-5">
+                        <span id="2Details"></span>
+                    </span>
+                </div>
+                <!-- H2 Tote Box -->
+                <div class="chart-container" id="n2_6">
+                    <canvas id="H2Chart"></canvas>
+                </div>
+                <!-- H2 Drops -->
+                <div class="left top text" id="n4_5">
+                    <span id="2Time"></span>
+                    <span id="2Drops" style="font-size: 2.5vh;"></span>
+                </div>
+            </div>
+
+            <div class="frame" id="n3_1" style="width:12.5%">
                 <!-- H3 Contents -->
                 <div class="subsets left top text" id="n2_20">
                     <span id="n2_20-0">H3<br></span>
@@ -59,27 +78,27 @@
                     <span id="3Drops" style="font-size: 2.5vh;"></span>
                 </div>
             </div>
-			
-			<div class="frame" id="n3_1" style="width:15%">
-                <!-- H2 Contents -->
+
+            <div class="frame" id="n3_1" style="width:12.5%">
+                <!-- H4 Contents -->
                 <div class="subsets left top text" id="n2_20">
                     <span id="n2_20-0">H4<br></span>
                     <span id="n2_20-5">
-                        <span id="2Details"></span>
+                        <span id="4Details"></span>
                     </span>
                 </div>
-                <!-- H2 Tote Box -->
+                <!-- H4 Tote Box -->
                 <div class="chart-container" id="n2_6">
-                    <canvas id="H2Chart"></canvas>
+                    <canvas id="H4Chart"></canvas>
                 </div>
-                <!-- H2 Drops -->
+                <!-- H4 Drops -->
                 <div class="left top text" id="n4_5">
-                    <span id="2Time"></span>
-                    <span id="2Drops" style="font-size: 2.5vh;"></span>
+                    <span id="4Time"></span>
+                    <span id="4Drops" style="font-size: 2.5vh;"></span>
                 </div>
             </div>
 
-            <div class="frame" id="n3_1" style="width:15%">
+            <div class="frame" id="n3_1" style="width:12.5%">
                 <!-- H5 Contents -->
                 <div class="subsets left top text" id="n2_20">
                     <span id="n2_20-0">H5<br></span>
@@ -98,7 +117,7 @@
                 </div>
             </div>
 
-            <div class="frame" id="n3_1" style="width:15%">
+            <div class="frame" id="n3_1" style="width:12.5%">
                 <!-- H5 Contents -->
                 <div class="subsets left top text" id="n2_20">
                     <span id="n2_20-0">H6<br></span>
@@ -161,15 +180,23 @@
         var ctx = document.getElementById('H1Chart');
         ctx.height = parent.height;
         new Chart(ctx, @Html.Raw(Model.ChartJson1));
+
         ctx = document.getElementById('H2Chart');
         ctx.height = parent.height;
         new Chart(ctx, @Html.Raw(Model.ChartJson2));
+
         ctx = document.getElementById('H3Chart');
         ctx.height = parent.height;
         new Chart(ctx, @Html.Raw(Model.ChartJson3));
+
+        ctx = document.getElementById('H4Chart');
+        ctx.height = parent.height;
+        new Chart(ctx, @Html.Raw(Model.ChartJson4));
+
         ctx = document.getElementById('H5Chart');
         ctx.height = parent.height;
         new Chart(ctx, @Html.Raw(Model.ChartJson5));
+
         ctx = document.getElementById('H6Chart');
         ctx.height = parent.height;
         new Chart(ctx, @Html.Raw(Model.ChartJson6));
@@ -183,6 +210,9 @@
         Details.innerHTML = DetailsText.split("_")[0] + "<br>Material: " + DetailsText.split("_")[1];
         Details = document.getElementById('3Details');
         DetailsText = "@Html.Raw(Model.Chart3.data.labels[0])";
+        Details.innerHTML = DetailsText.split("_")[0] + "<br>Material: " + DetailsText.split("_")[1];
+        Details = document.getElementById('4Details');
+        DetailsText = "@Html.Raw(Model.Chart4.data.labels[0])";
         Details.innerHTML = DetailsText.split("_")[0] + "<br>Material: " + DetailsText.split("_")[1];
         Details = document.getElementById('5Details');
         DetailsText = "@Html.Raw(Model.Chart5.data.labels[0])";
@@ -206,6 +236,11 @@
         Time.innerHTML = "@Html.Raw(Model.Chart3.secsToEmpty)<br>";
         Drops = document.getElementById('3Drops');
         Drops.innerHTML = "@Html.Raw(Model.Chart3.data.datasets[0].data[0])" + " kg <br>" + "@Html.Raw(Model.Chart3.totes)" + " Totes Req.";
+
+        Time = document.getElementById('4Time');
+        Time.innerHTML = "@Html.Raw(Model.Chart4.secsToEmpty)<br>";
+        Drops = document.getElementById('4Drops');
+        Drops.innerHTML = "@Html.Raw(Model.Chart4.data.datasets[0].data[0])" + " kg <br>" + "@Html.Raw(Model.Chart4.totes)" + " Totes Req.";
 
         Time = document.getElementById('5Time');
         Time.innerHTML = "@Html.Raw(Model.Chart5.secsToEmpty)<br>";

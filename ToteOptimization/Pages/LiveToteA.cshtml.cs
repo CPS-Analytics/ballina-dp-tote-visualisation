@@ -119,10 +119,11 @@ namespace ToteOptimization.Pages
                                 {
                                     PO = reader.GetString(10);
                                     headData.Add(reader.GetInt32(6).ToString()); //drops            5
-                                    if (reader.GetInt32(6) > 300) headData.Add("green");//colours   6
-                                    else if (reader.GetInt32(6) > 150) headData.Add("orange");
+                                    if (reader.GetInt32(6) > 200) headData.Add("green");//colours   6
+                                    else if (reader.GetInt32(6) > 75) headData.Add("orange");
                                     else headData.Add("red");
-                                    headData.Add(DateTime.Now.AddSeconds(reader.GetInt32(7)).ToString("h:mm tt")); //Time Left 7 TimeSpan.FromSeconds(reader.GetInt32(8)).ToString()
+                                    //headData.Add(DateTime.Now.AddSeconds(reader.GetInt32(7)).ToString("h:mm tt")); //Time Left 7 TimeSpan.FromSeconds(reader.GetInt32(8)).ToString()
+									headData.Add(TimeSpan.FromSeconds(reader.GetInt32(7)).ToString(@"hh\:mm\:ss"));
                                     headData.Add(reader.GetInt32(9).ToString()); //Total_Bags_Dropped 8
                                     headData.Add(reader.GetString(10)); //PO 9
                                 }

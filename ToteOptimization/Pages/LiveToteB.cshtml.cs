@@ -15,11 +15,13 @@ namespace ToteOptimization.Pages
         public ChartJs Chart1 { get; set; }
         public ChartJs Chart2 { get; set; }
         public ChartJs Chart3 { get; set; }
+        public ChartJs Chart4 { get; set; }
         public ChartJs Chart5 { get; set; }
         public ChartJs Chart6 { get; set; }
         public string ChartJson1 { get; set; }
         public string ChartJson2 { get; set; }
         public string ChartJson3 { get; set; }
+        public string ChartJson4 { get; set; }
         public string ChartJson5 { get; set; }
         public string ChartJson6 { get; set; }
         public int Current_PO_Bags { get; set; }
@@ -117,10 +119,11 @@ namespace ToteOptimization.Pages
                                 {
                                     PO = reader.GetString(10);
                                     headData.Add(reader.GetInt32(6).ToString()); //drops            5
-                                    if (reader.GetInt32(6) > 300) headData.Add("green");//colours   6
-                                    else if (reader.GetInt32(6) > 150) headData.Add("orange");
+                                    if (reader.GetInt32(6) > 200) headData.Add("green");//colours   6
+                                    else if (reader.GetInt32(6) > 75) headData.Add("orange");
                                     else headData.Add("red");
-                                    headData.Add(DateTime.Now.AddSeconds(reader.GetInt32(7)).ToString("h:mm tt")); //Time Left 7 TimeSpan.FromSeconds(reader.GetInt32(8)).ToString()
+                                    //headData.Add(DateTime.Now.AddSeconds(reader.GetInt32(7)).ToString("h:mm tt")); //Time Left 7 TimeSpan.FromSeconds(reader.GetInt32(8)).ToString()
+									headData.Add(TimeSpan.FromSeconds(reader.GetInt32(7)).ToString(@"hh\:mm\:ss"));
                                     headData.Add(reader.GetInt32(9).ToString()); //Total_Bags_Dropped 8
                                     headData.Add(reader.GetString(10)); //PO 9
                                 }
@@ -203,12 +206,14 @@ namespace ToteOptimization.Pages
             Chart1 = chartPop("4BH1", Heads);
             Chart2 = chartPop("4BH2", Heads);
             Chart3 = chartPop("4BH3", Heads);
+            Chart4 = chartPop("4BH4", Heads);
             Chart5 = chartPop("4BH5", Heads);
             Chart6 = chartPop("4BH6", Heads);
 
             ChartJson1 = JsonConvert.SerializeObject(Chart1, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore, });
             ChartJson2 = JsonConvert.SerializeObject(Chart2, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore, });
             ChartJson3 = JsonConvert.SerializeObject(Chart3, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore, });
+            ChartJson4 = JsonConvert.SerializeObject(Chart4, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore, });
             ChartJson5 = JsonConvert.SerializeObject(Chart5, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore, });
             ChartJson6 = JsonConvert.SerializeObject(Chart6, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore, });
         }
